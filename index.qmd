@@ -1,27 +1,55 @@
 ---
-title: "Untitled"
+title: "Migration across Welsh index of muliple deprivation using SAIL Databank"
 author: "Toochukwu"
 format: revealjs
 date: "`r Sys.Date()`"
+footer: 'Presentation at imperial college'
 editor: visual
 ---
 
 ## Introduction
 
-Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
 
-## Bullets
+## AIM
 
 When you click the **Render** button a document will be generated that includes:
 
--   Content authored with markdown
--   Output from executable code
+-   Understanding migration patterns across welsh index of multiple deprivation quintiles
+-   factors influencing movement across deprivation quintiles
+-   Calculating person time and incidence of chronic diseases
 
-## Code
-
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
-
+## Timeline
+project started on the 
 ```{r}
 library(timevis)
-timevis()
+data <- data.frame(
+  id      = 1:5,
+  content = c("Start", 'Setting Up',"Brain Storming","Data Processing and Analaysis", 
+              "Presentation to shareholders"),
+  start   = c("2024-06-10", "2024-06-11", "2024-06-19", "2024-06-27", "2024-08-21"),
+  end     = c(NA ,  "2024-06-19", "2024-06-26",'2024-08-18', NA)
+)
+timevis(data, height = "500px", width = "800px", options = list(
+  style = "
+    .vis-time-axis .vis-text {
+      font-size: 12px; /* Adjust the font size of the dates */
+    }
+  ")
+  )
 ```
+## 
+```{r}
+library(gt)
+df<-data.frame(Dataset = c('Welsh Longitudinal General Practice Dataset (WLGP) - Welsh Primary Care', 'Welsh Demographic Service Dataset (WDSD)'), 
+               Population = c('Diagnosis, Comorbidities', 'Age, Gender, Residence'), 
+               Treatment = c('Medication', NA), 
+               Outcomes = c('Complications', 'Death'))
+
+df|>
+  gt()|>
+  tab_header(title = 'Datasets Used')|>
+  sub_missing(missing_text = '')|> 
+  opt_stylize(style = 1, color = "cyan", add_row_striping = TRUE)|>
+  tab_options(table.border.top.style  = 'NA')
+```
+
