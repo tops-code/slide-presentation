@@ -2,24 +2,54 @@
 title: "Migration across Welsh index of muliple deprivation using SAIL Databank"
 author: "Toochukwu"
 format: revealjs
+smaller: True
 date: "`r Sys.Date()`"
 footer: 'Presentation at imperial college'
 editor: visual
 ---
 
-## Introduction
+## 
+#### Introduction
+
+:::: {.columns style="font-size: 100%;"}
+
+::: {.column width="50%"}
+Secure Anonymised Information Linkage (SAIL) 
+: Data bank containing routinely collected data. Using pseudonymised data, similar to the deidentified system of Discover Now
+
+:::
+::: {.column width="50%"}
+The Welsh Index of Multiple Deprivation (WIMD)
+ :  Welsh Government-produced index that ranks the relative deprivation of small areas in Wales.
+:::
+
+::: {.column width="100%"}
+```{mermaid}
+%%| fig-cap: "Diagram showcasing how SAIL works"
+%%| fig-align: "center"
+graph TD
+    A[Nationally Collected Datasets] --> B[SAIL Databank]
+    B --> C[Research-Ready Datasets]
+    B --> D[Trusted Research Environment]
+    B --> E[Data Science Tools & Support]
+    C --> F[Researchers]
+    D --> F
+    E --> F
+```
+:::
+
+
+::::
 
 
 ## AIM
 
-When you click the **Render** button a document will be generated that includes:
-
--   Understanding migration patterns across welsh index of multiple deprivation quintiles
--   factors influencing movement across deprivation quintiles
+-   To understand migration patterns across welsh index of multiple deprivation quintiles
+-   Identify factors influencing movement across deprivation quintiles
 -   Calculating person time and incidence of chronic diseases
 
-## Timeline
-project started on the 
+## Project Timeline
+
 ```{r}
 library(timevis)
 data <- data.frame(
@@ -37,7 +67,9 @@ timevis(data, height = "500px", width = "800px", options = list(
   ")
   )
 ```
-## 
+
+## Datasets Used
+
 ```{r}
 library(gt)
 df<-data.frame(Dataset = c('Welsh Longitudinal General Practice Dataset (WLGP) - Welsh Primary Care', 'Welsh Demographic Service Dataset (WDSD)'), 
@@ -47,9 +79,80 @@ df<-data.frame(Dataset = c('Welsh Longitudinal General Practice Dataset (WLGP) -
 
 df|>
   gt()|>
-  tab_header(title = 'Datasets Used')|>
   sub_missing(missing_text = '')|> 
   opt_stylize(style = 1, color = "cyan", add_row_striping = TRUE)|>
   tab_options(table.border.top.style  = 'NA')
 ```
+
+## FLOW DIAGRAM
+
+
+:::: {.columns}
+
+::: {.column width="100%"}
+![](main.svg){width="120%"}
+:::
+::::
+
+
+## 1
+:::: {.columns}
+
+::: {.column width="40%"}
+Get study participants from the WDSD data </br>
+**Tools** </br>
+SQL Postgress </br>
+:::
+
+::: {.column width="60%"}
+**How **</br>
+1. Create an empty table with necessary columns</br>
+2. Populate table with SQL - INSERT COMMAND </br>
+3. Filter - welsh residents,  during study period </br>
+:::
+
+::::
+
+## 2
+:::: {.columns}
+
+::: {.column width="40%"}
+Import data into R studio for analysis </br>
+**Tools** </br>
+R
+:::
+
+::: {.column width="60%"}
+**How **</br>
+1. Create connection with sql server
+2. Import data
+3. Clean and process - duplicates, Null values, Out of range values and format
+4. Analysis - Survival plot
+:::
+
+::::
+
+## 3 , 4 and 5
+:::: {.columns}
+
+::: {.column width="40%"}
+Identify those with desired outcome from WLGP </br>
+**Tools** </br>
+SQL and R 
+:::
+
+::: {.column width="60%"}
+**How **</br>
+1. Get codes from concept library into SAIL terminal
+2. Get those with desired outcome
+3. Ensure diagnosis is within study period
+4. Join WDSD DATA TO WLGP DATA on ALF
+5. Calculate person time and true incidence rate
+:::
+
+::::
+
+
+
+
 

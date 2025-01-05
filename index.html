@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Toochukwu">
-  <meta name="dcterms.date" content="2025-01-02">
+  <meta name="dcterms.date" content="2025-01-05">
   <title>Migration across Welsh index of muliple deprivation using SAIL Databank</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -321,6 +321,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="index_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="index_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="index_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
   <script src="index_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 
   <link href="index_files/libs/visjs-7.4.9/vis-timeline-graph2d.min.css" rel="stylesheet">
@@ -349,56 +352,91 @@ Toochukwu
 </div>
 </div>
 
-  <p class="date">2025-01-02</p>
+  <p class="date">2025-01-05</p>
 </section>
-<section id="introduction" class="slide level2">
-<h2>Introduction</h2>
+<section id="section" class="slide level2">
+<h2></h2>
+<h4 id="introduction">Introduction</h4>
+<div class="columns" style="font-size: 100%;">
+<div class="column" style="width:50%;">
+<dl>
+<dt>Secure Anonymised Information Linkage (SAIL)</dt>
+<dd>
+Data bank containing routinely collected data. Using pseudonymised data, similar to the deidentified system of Discover Now
+</dd>
+</dl>
+</div><div class="column" style="width:50%;">
+<dl>
+<dt>The Welsh Index of Multiple Deprivation (WIMD)</dt>
+<dd>
+Welsh Government-produced index that ranks the relative deprivation of small areas in Wales.
+</dd>
+</dl>
+</div><div class="column" style="width:100%;">
+<div class="cell" data-reveal="true" data-layout-align="center">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TD
+    A[Nationally Collected Datasets] --&gt; B[SAIL Databank]
+    B --&gt; C[Research-Ready Datasets]
+    B --&gt; D[Trusted Research Environment]
+    B --&gt; E[Data Science Tools &amp; Support]
+    C --&gt; F[Researchers]
+    D --&gt; F
+    E --&gt; F
+</pre>
+</div>
+<p></p><figcaption> Diagram showcasing how SAIL works</figcaption> </figure><p></p>
+</div>
+</div>
+</div>
+</div></div>
 </section>
 <section id="aim" class="slide level2">
 <h2>AIM</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes:</p>
 <ul>
-<li>Understanding migration patterns across welsh index of multiple deprivation quintiles</li>
-<li>factors influencing movement across deprivation quintiles</li>
+<li>To understand migration patterns across welsh index of multiple deprivation quintiles</li>
+<li>Identify factors influencing movement across deprivation quintiles</li>
 <li>Calculating person time and incidence of chronic diseases</li>
 </ul>
 </section>
-<section id="timeline" class="slide level2">
-<h2>Timeline</h2>
-<p>project started on the</p>
+<section id="project-timeline" class="slide level2">
+<h2>Project Timeline</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-1b7b63b0a98153dbf7f6" class="timevis html-widget" style="width:800px;height:500px;">
+<div id="htmlwidget-b21071e5cfe21eb93c98" class="timevis html-widget" style="width:800px;height:500px;">
 <div class="btn-group zoom-menu">
 <button type="button" class="btn btn-default btn-lg zoom-in" title="Zoom in">+</button>
 <button type="button" class="btn btn-default btn-lg zoom-out" title="Zoom out">-</button>
 </div>
 </div>
-<script type="application/json" data-for="htmlwidget-1b7b63b0a98153dbf7f6">{"x":{"items":[{"id":"1","content":"Start","start":"2024-06-10"},{"id":"2","content":"Setting Up","start":"2024-06-11","end":"2024-06-19"},{"id":"3","content":"Brain Storming","start":"2024-06-19","end":"2024-06-26"},{"id":"4","content":"Data Processing and Analaysis","start":"2024-06-27","end":"2024-08-18"},{"id":"5","content":"Presentation to shareholders","start":"2024-08-21"}],"groups":null,"showZoom":true,"zoomFactor":0.5,"fit":true,"options":{"style":"\n    .vis-time-axis .vis-text {\n      font-size: 12px; /* Adjust the font size of the dates */\n    }\n  "},"height":"500px","timezone":null,"crosstalk":null,"api":[]},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-b21071e5cfe21eb93c98">{"x":{"items":[{"id":"1","content":"Start","start":"2024-06-10"},{"id":"2","content":"Setting Up","start":"2024-06-11","end":"2024-06-19"},{"id":"3","content":"Brain Storming","start":"2024-06-19","end":"2024-06-26"},{"id":"4","content":"Data Processing and Analaysis","start":"2024-06-27","end":"2024-08-18"},{"id":"5","content":"Presentation to shareholders","start":"2024-08-21"}],"groups":null,"showZoom":true,"zoomFactor":0.5,"fit":true,"options":{"style":"\n    .vis-time-axis .vis-text {\n      font-size: 12px; /* Adjust the font size of the dates */\n    }\n  "},"height":"500px","timezone":null,"crosstalk":null,"api":[]},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
+<section id="datasets-used" class="slide level2">
+<h2>Datasets Used</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="dqjbtxwjzq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dqjbtxwjzq table {
+<div id="sqrfpczysd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sqrfpczysd table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dqjbtxwjzq thead, #dqjbtxwjzq tbody, #dqjbtxwjzq tfoot, #dqjbtxwjzq tr, #dqjbtxwjzq td, #dqjbtxwjzq th {
+#sqrfpczysd thead, #sqrfpczysd tbody, #sqrfpczysd tfoot, #sqrfpczysd tr, #sqrfpczysd td, #sqrfpczysd th {
   border-style: none;
 }
 
-#dqjbtxwjzq p {
+#sqrfpczysd p {
   margin: 0;
   padding: 0;
 }
 
-#dqjbtxwjzq .gt_table {
+#sqrfpczysd .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -424,12 +462,12 @@ Toochukwu
   border-left-color: #D3D3D3;
 }
 
-#dqjbtxwjzq .gt_caption {
+#sqrfpczysd .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dqjbtxwjzq .gt_title {
+#sqrfpczysd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -441,7 +479,7 @@ Toochukwu
   border-bottom-width: 0;
 }
 
-#dqjbtxwjzq .gt_subtitle {
+#sqrfpczysd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -453,7 +491,7 @@ Toochukwu
   border-top-width: 0;
 }
 
-#dqjbtxwjzq .gt_heading {
+#sqrfpczysd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -465,13 +503,13 @@ Toochukwu
   border-right-color: #D3D3D3;
 }
 
-#dqjbtxwjzq .gt_bottom_border {
+#sqrfpczysd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #01837B;
 }
 
-#dqjbtxwjzq .gt_col_headings {
+#sqrfpczysd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #01837B;
@@ -486,7 +524,7 @@ Toochukwu
   border-right-color: #D3D3D3;
 }
 
-#dqjbtxwjzq .gt_col_heading {
+#sqrfpczysd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -506,7 +544,7 @@ Toochukwu
   overflow-x: hidden;
 }
 
-#dqjbtxwjzq .gt_column_spanner_outer {
+#sqrfpczysd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -518,15 +556,15 @@ Toochukwu
   padding-right: 4px;
 }
 
-#dqjbtxwjzq .gt_column_spanner_outer:first-child {
+#sqrfpczysd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dqjbtxwjzq .gt_column_spanner_outer:last-child {
+#sqrfpczysd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dqjbtxwjzq .gt_column_spanner {
+#sqrfpczysd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #01837B;
@@ -538,11 +576,11 @@ Toochukwu
   width: 100%;
 }
 
-#dqjbtxwjzq .gt_spanner_row {
+#sqrfpczysd .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dqjbtxwjzq .gt_group_heading {
+#sqrfpczysd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -568,7 +606,7 @@ Toochukwu
   text-align: left;
 }
 
-#dqjbtxwjzq .gt_empty_group_heading {
+#sqrfpczysd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -583,15 +621,15 @@ Toochukwu
   vertical-align: middle;
 }
 
-#dqjbtxwjzq .gt_from_md > :first-child {
+#sqrfpczysd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dqjbtxwjzq .gt_from_md > :last-child {
+#sqrfpczysd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dqjbtxwjzq .gt_row {
+#sqrfpczysd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -610,7 +648,7 @@ Toochukwu
   overflow-x: hidden;
 }
 
-#dqjbtxwjzq .gt_stub {
+#sqrfpczysd .gt_stub {
   color: #FFFFFF;
   background-color: #01837B;
   font-size: 100%;
@@ -623,7 +661,7 @@ Toochukwu
   padding-right: 5px;
 }
 
-#dqjbtxwjzq .gt_stub_row_group {
+#sqrfpczysd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -637,15 +675,15 @@ Toochukwu
   vertical-align: top;
 }
 
-#dqjbtxwjzq .gt_row_group_first td {
+#sqrfpczysd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dqjbtxwjzq .gt_row_group_first th {
+#sqrfpczysd .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dqjbtxwjzq .gt_summary_row {
+#sqrfpczysd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -655,16 +693,16 @@ Toochukwu
   padding-right: 5px;
 }
 
-#dqjbtxwjzq .gt_first_summary_row {
+#sqrfpczysd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #01837B;
 }
 
-#dqjbtxwjzq .gt_first_summary_row.thick {
+#sqrfpczysd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dqjbtxwjzq .gt_last_summary_row {
+#sqrfpczysd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -674,7 +712,7 @@ Toochukwu
   border-bottom-color: #01837B;
 }
 
-#dqjbtxwjzq .gt_grand_summary_row {
+#sqrfpczysd .gt_grand_summary_row {
   color: #333333;
   background-color: #A5FEF2;
   text-transform: inherit;
@@ -684,7 +722,7 @@ Toochukwu
   padding-right: 5px;
 }
 
-#dqjbtxwjzq .gt_first_grand_summary_row {
+#sqrfpczysd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -694,7 +732,7 @@ Toochukwu
   border-top-color: #01837B;
 }
 
-#dqjbtxwjzq .gt_last_grand_summary_row_top {
+#sqrfpczysd .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -704,11 +742,11 @@ Toochukwu
   border-bottom-color: #01837B;
 }
 
-#dqjbtxwjzq .gt_striped {
+#sqrfpczysd .gt_striped {
   background-color: #F4F4F4;
 }
 
-#dqjbtxwjzq .gt_table_body {
+#sqrfpczysd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #01837B;
@@ -717,7 +755,7 @@ Toochukwu
   border-bottom-color: #01837B;
 }
 
-#dqjbtxwjzq .gt_footnotes {
+#sqrfpczysd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -731,7 +769,7 @@ Toochukwu
   border-right-color: #D3D3D3;
 }
 
-#dqjbtxwjzq .gt_footnote {
+#sqrfpczysd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -740,7 +778,7 @@ Toochukwu
   padding-right: 5px;
 }
 
-#dqjbtxwjzq .gt_sourcenotes {
+#sqrfpczysd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -754,7 +792,7 @@ Toochukwu
   border-right-color: #D3D3D3;
 }
 
-#dqjbtxwjzq .gt_sourcenote {
+#sqrfpczysd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -762,72 +800,72 @@ Toochukwu
   padding-right: 5px;
 }
 
-#dqjbtxwjzq .gt_left {
+#sqrfpczysd .gt_left {
   text-align: left;
 }
 
-#dqjbtxwjzq .gt_center {
+#sqrfpczysd .gt_center {
   text-align: center;
 }
 
-#dqjbtxwjzq .gt_right {
+#sqrfpczysd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dqjbtxwjzq .gt_font_normal {
+#sqrfpczysd .gt_font_normal {
   font-weight: normal;
 }
 
-#dqjbtxwjzq .gt_font_bold {
+#sqrfpczysd .gt_font_bold {
   font-weight: bold;
 }
 
-#dqjbtxwjzq .gt_font_italic {
+#sqrfpczysd .gt_font_italic {
   font-style: italic;
 }
 
-#dqjbtxwjzq .gt_super {
+#sqrfpczysd .gt_super {
   font-size: 65%;
 }
 
-#dqjbtxwjzq .gt_footnote_marks {
+#sqrfpczysd .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dqjbtxwjzq .gt_asterisk {
+#sqrfpczysd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dqjbtxwjzq .gt_indent_1 {
+#sqrfpczysd .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dqjbtxwjzq .gt_indent_2 {
+#sqrfpczysd .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dqjbtxwjzq .gt_indent_3 {
+#sqrfpczysd .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dqjbtxwjzq .gt_indent_4 {
+#sqrfpczysd .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dqjbtxwjzq .gt_indent_5 {
+#sqrfpczysd .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dqjbtxwjzq .katex-display {
+#sqrfpczysd .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dqjbtxwjzq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#sqrfpczysd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -840,10 +878,7 @@ Toochukwu
 <col style="width: 25%">
 </colgroup>
 <thead>
-<tr class="header gt_heading">
-<th colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Datasets Used</th>
-</tr>
-<tr class="odd gt_col_headings">
+<tr class="header gt_col_headings">
 <th id="Dataset" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Dataset</th>
 <th id="Population" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Population</th>
 <th id="Treatment" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Treatment</th>
@@ -870,6 +905,40 @@ Toochukwu
 </div>
 </div>
 </div>
+</section>
+<section id="flow-diagram" class="slide level2">
+<h2>FLOW DIAGRAM</h2>
+<div class="columns">
+<div class="column" style="width:100%;">
+<p><img data-src="main.svg" style="width:120.0%"></p>
+</div></div>
+</section>
+<section id="section-1" class="slide level2">
+<h2>1</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Get study participants from the WDSD data <br> <strong>Tools</strong> <br> SQL Postgress <br></p>
+</div><div class="column" style="width:60%;">
+<p><strong>How </strong><br> 1. Create an empty table with necessary columns<br> 2. Populate table with SQL - INSERT COMMAND <br> 3. Filter - welsh residents, during study period <br></p>
+</div></div>
+</section>
+<section id="section-2" class="slide level2">
+<h2>2</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Import data into R studio for analysis <br> <strong>Tools</strong> <br> R</p>
+</div><div class="column" style="width:60%;">
+<p><strong>How </strong><br> 1. Create connection with sql server 2. Import data 3. Clean and process - duplicates, Null values, Out of range values and format 4. Analysis - Survival plot</p>
+</div></div>
+</section>
+<section id="and-5" class="slide level2">
+<h2>3 , 4 and 5</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>Identify those with desired outcome from WLGP <br> <strong>Tools</strong> <br> SQL and R</p>
+</div><div class="column" style="width:60%;">
+<p><strong>How </strong><br> 1. Get codes from concept library into SAIL terminal 2. Get those with desired outcome 3. Ensure diagnosis is within study period 4. Join WDSD DATA TO WLGP DATA on ALF 5. Calculate person time and true incidence rate</p>
+</div></div>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 <p>Presentation at imperial college</p>
@@ -907,7 +976,7 @@ Toochukwu
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,
