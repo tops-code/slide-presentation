@@ -5,22 +5,29 @@ format: revealjs
 smaller: True
 date: "`r Sys.Date()`"
 footer: 'Presentation at imperial college'
+linestretch: 1.5
+mermaid: 
+  theme: default
 editor: visual
 ---
 
 ## 
+
 #### Introduction
 
-:::: {.columns style="font-size: 100%;"}
-
+:::::: {.columns style="font-size: 100%;"}
 ::: {.column width="50%"}
-Secure Anonymised Information Linkage (SAIL) 
-: Data bank containing routinely collected data. Using pseudonymised data, similar to the deidentified system of Discover Now
 
+Secure Anonymised Information Linkage (SAIL)
+
+:   Data bank containing routinely collected data. Using pseudonymised data, similar to the deidentified system of Discover Now
 :::
+
 ::: {.column width="50%"}
+
 The Welsh Index of Multiple Deprivation (WIMD)
- :  Welsh Government-produced index that ranks the relative deprivation of small areas in Wales.
+
+:   Welsh Government-produced index that ranks the relative deprivation of small areas in Wales.
 :::
 
 ::: {.column width="100%"}
@@ -37,18 +44,19 @@ graph TD
     E --> F
 ```
 :::
+::::::
 
+## 
 
-::::
-
-
-## AIM
+#### AIM
 
 -   To understand migration patterns across welsh index of multiple deprivation quintiles
 -   Identify factors influencing movement across deprivation quintiles
 -   Calculating person time and incidence of chronic diseases
 
-## Project Timeline
+## 
+
+#### Project Timeline
 
 ```{r}
 library(timevis)
@@ -68,7 +76,9 @@ timevis(data, height = "500px", width = "800px", options = list(
   )
 ```
 
-## Datasets Used
+## 
+
+#### Datasets Used
 
 ```{r}
 library(gt)
@@ -84,75 +94,169 @@ df|>
   tab_options(table.border.top.style  = 'NA')
 ```
 
-## FLOW DIAGRAM
+## 
 
+#### FLOW DIAGRAM
 
-:::: {.columns}
+:::: columns
+::: {.column width="100%"}
+![](main.svg){width="100%"}
+:::
+::::
+
+## 
+
+#### 1. Get study participants from the WDSD data
+
+:::::: columns
+::: {.column width="40%"}
+**Tools** </br> SQL - PostgreSQL </br> **Skills** </br> 1. Data Querying </br> 2. Data Manipulation </br> 3. Data Definition </br>
+:::
+
+::: {.column width="60%"}
+**How** </br> 1. Create an empty table with necessary columns</br> 2. Populate table with SQL - INSERT COMMAND </br> 3. Filter - welsh residents, during study period </br>
+:::
 
 ::: {.column width="100%"}
-![](main.svg){width="120%"}
+```{mermaid}
+%%| fig-width: 100
+%%| fig-align: "center"
+flowchart LR
+    subgraph Eclipse - SQL
+      direction LR
+    A[(SAIL)] -->B[WLGP]
+    A[(SAIL)] -->C[WDSD]
+    D["fa:fa-caret-right Welsh Residents </br> fa:fa-caret-right Moved within study period </br> fa:fa-caret-right Identify WIMD for each move"]
+    style D text-align:left
+    C--> F[Define study population]
+    F--> D
+    end
+    
+```
 :::
-::::
+::::::
 
+## 
 
-## 1
-:::: {.columns}
+#### 2 Import data into R studio for analysis
 
+::::::: columns
 ::: {.column width="40%"}
-Get study participants from the WDSD data </br>
-**Tools** </br>
-SQL Postgress </br>
+**Tools** </br> R </br> **Skills** </br> 1. Data cleaning and processing </br> 2. Statistical Analysis </br>
 :::
 
 ::: {.column width="60%"}
-**How **</br>
-1. Create an empty table with necessary columns</br>
-2. Populate table with SQL - INSERT COMMAND </br>
-3. Filter - welsh residents,  during study period </br>
+**How** </br> 1. Create connection with sql server </br> 2. Import data </br> 3. Clean and process - duplicates, Null values, Out of range values and format </br> 4. Analysis - Survival plot </br>
 :::
 
-::::
+::: {.column width="50%"}
+```{mermaid}
+%%| fig-align: "center"
+flowchart TD
+    A[WDSD] --> B[study population]
+    subgraph R studio - R
+    B --> D[Handle null values]
+    B --> C[Handle duplicates]
+    B --> E[Format data]
+    D --> F[Data analysis - Survival plot]
+    C --> F
+    E --> F
+    end
+```
+:::
 
-## 2
-:::: {.columns}
+::: {.column width="50%"}
+![example output](ex1.png){fig-align="left"}
+:::
+:::::::
 
+## 
+
+#### 3 Identify those with desired outcome from WLGP
+
+:::::: columns
 ::: {.column width="40%"}
-Import data into R studio for analysis </br>
-**Tools** </br>
-R
+**Tools** </br> SQL and R </br> **Skills** </br> 1. Knowledge of ICD codes </br> 2. Data Querying </br>
 :::
 
 ::: {.column width="60%"}
-**How **</br>
-1. Create connection with sql server
-2. Import data
-3. Clean and process - duplicates, Null values, Out of range values and format
-4. Analysis - Survival plot
+**How** </br> 1. Get codes from concept library into SAIL terminal</br> 2. Get those with desired outcome</br> 3. Ensure diagnosis is within study period</br> 
 :::
 
-::::
+::: {.column width="100%"}
+```{mermaid}
+%%| fig-width: 100
+%%| fig-align: "center"
+flowchart LR
+    subgraph Eclipse - SQL
+      direction LR
+    A[(SAIL)] -->B[WLGP]
+    A[(SAIL)] -->C[WDSD]
+    D[Get those with desired outcome]
+    style D text-align:left
+    B--> F[Cross reference the necessary icd codes]
+    F--> D
+    end
+    
+```
+:::
+::::::
 
-## 3 , 4 and 5
-:::: {.columns}
 
+## 
+
+#### 4 and 5 Get those in study population with desired outcome
+
+:::::: columns
 ::: {.column width="40%"}
-Identify those with desired outcome from WLGP </br>
-**Tools** </br>
-SQL and R 
+**Tools** </br> 
+SQL and R </br> 
+**Skills** </br> 1. SQL JOINS </br> 2. Data Querying </br> 2. Data Visualization </br>
 :::
 
 ::: {.column width="60%"}
-**How **</br>
-1. Get codes from concept library into SAIL terminal
-2. Get those with desired outcome
-3. Ensure diagnosis is within study period
-4. Join WDSD DATA TO WLGP DATA on ALF
-5. Calculate person time and true incidence rate
+**How** </br> 
+1. Join the 2 populations together</br> 
+2. Calculate person time each participant contributed to the total time in each quintile</br> 
+3. Calculate incidence across quintiles with person time</br> 
 :::
 
-::::
+::: {.column width="100%"}
+```{mermaid}
+%%| fig-width: 100
+%%| fig-align: "center"
+flowchart LR
+    subgraph Eclipse - SQL
+      direction LR
+    A[Participants with desired outcome] -->C[Join to get time each  participant </br> spent in quintile before developing outcome]
+    style C text-align:left
+    B[Study population] -->C
+    end
+    subgraph R Studio - R
+    C --> D[Calculate person time]
+    D --> E[Calculate incidence across quintiles]
+    end
+    
+```
+:::
+::::::
 
+## 
 
+:::::: columns
+::: {.column width="100%"}
+![](ex3.png){fig-align="center"}
+:::
+::::::
 
+##
+:::::: columns
+::: {.column width="100%"}
+![](ex2.png){fig-align="center"}
+:::
+::::::
 
+## 
 
+#### Conclusion
+ My work focused on understanding migration and the factors affecting it  across migration levels and the calculating incidence of depression across deprivation quintile. i used SAIL Databank and demonstrated skills in data engineering, data handling, data processing , data cleaning , statistical analysis and presentation. 
